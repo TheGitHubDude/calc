@@ -1,7 +1,7 @@
 
 
 var output;
-var operator
+var operator;
 var num1;
 var num2;
 var answer;
@@ -11,6 +11,9 @@ function init(){
 }
 
 function numberPress(num){
+if(num1 === 'reset'){
+  output.innerHTML = '';
+}
   output.innerHTML += num;
 
 }
@@ -29,17 +32,22 @@ function equalsPress(){
 
   switch(operator){
     case '+':
-      answer = add( num1, num2);
+      answer = add();
+      break;
     case '-':
-      answer = minus( num1, num2);
+      answer = minus();
+      break;
     case '*':
-      answer = multiply( num1, num2);
+      answer = multiply();
+      break;
     case '/':
-      answer = divide( num1, num2);
-
+      answer = divide();
+      break;
   }
   console.log(answer);
   output.innerHTML = answer;
+  num1 = 'reset';
+  num2 = 0;
 }
 
 function deletePress(){
@@ -48,22 +56,22 @@ function deletePress(){
 }
 
 function dotPress(){
-  output.innerHTML += '.'
+  output.innerHTML += '.';
 }
 
 function add(){
-  return sum = parseInt(num1) + parseInt(num2);
+  return sum = parseFloat(num1) + parseFloat(num2);
 }
 
 function minus(){
-  return difference = parseInt(num1) - parseInt(num2);
+  return difference = parseFloat(num1) - parseFloat(num2);
 
 }
 
 function multiply(){
-  return product = parseInt(num1) * parseInt(num2);
+  return product = parseFloat(num1) * parseFloat(num2);
 }
 
 function divide(){
-  return quotient = parseInt(num1) / parseInt(num2);
+  return quotient = parseFloat(num1) / parseFloat(num2);
 }

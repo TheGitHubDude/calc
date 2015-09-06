@@ -1,8 +1,8 @@
 
 
 .output_style{
-  height:40px;
-  width:300px;
+  min-height:40px;
+  width:308px;
 
 
   background-color: lightblue;
@@ -13,6 +13,7 @@
 
 
   border: 12px groove gray;
+  resize: none;
 }
 
 
